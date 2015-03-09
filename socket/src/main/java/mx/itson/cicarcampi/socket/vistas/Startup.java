@@ -49,7 +49,6 @@ public class Startup extends ActionBarActivity implements View.OnClickListener {
         startActivity(control);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.settings, menu);
