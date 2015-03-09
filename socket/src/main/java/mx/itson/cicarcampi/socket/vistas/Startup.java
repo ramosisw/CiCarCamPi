@@ -77,7 +77,6 @@ public class Startup extends ActionBarActivity implements View.OnClickListener {
             case RESULT_SETTINGS:
                 showUserSettings();
                 break;
-
         }
 
     }
