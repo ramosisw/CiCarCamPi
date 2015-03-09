@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CiCarCamPi</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_startup">StartUp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_controller">Controller</string>
+
+    <string name="title_activity_accelerometer_controller">AccelerometerController</string>
+    <string name="lbl_btn_acelerometro">Acelerometro</string>
+    <string name="lbl_btn_botones">Botones</string>
+    <string name="pref_host_display_name">HOST/IP iCarCamPi</string>
+    <string name="pref_host_default_value">192.168.10.1</string>
+    <string name="pref_port_display_name">PORT</string>
+    <string name="pref_port_default_value">8080</string>
+    <string name="pref_cicarcapi">CiCarCamPi Connection</string>
+
+</resources>

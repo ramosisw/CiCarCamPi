@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="D:\Archivos Fam R.P\AndroidStudio\CiCarCamPi\socket\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-7a355e3cdee1504861dd97b00e51b598ff4782e8.jar"
+        jar="D:\Archivos Fam R.P\AndroidStudio\CiCarCamPi\socket\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.2\libs\internal_impl-21.0.2.jar"
+        jumboMode="false" revision="21.0.2" sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f" />
+    <item
+        dex="D:\Archivos Fam R.P\AndroidStudio\CiCarCamPi\socket\build\intermediates\pre-dexed\debug\classes-5e28bbee624e312f2ecefc1a8a17a7437377065d.jar"
+        jar="D:\Archivos Fam R.P\AndroidStudio\CiCarCamPi\socket\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.2\classes.jar"
+        jumboMode="false" revision="21.0.2" sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3" />
+    <item
+        dex="D:\Archivos Fam R.P\AndroidStudio\CiCarCamPi\socket\build\intermediates\pre-dexed\debug\support-annotations-21.0.2-cd0edef291df572f3675e23e394e3308044ee7ef.jar"
+        jar="C:\Program Files\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.2\support-annotations-21.0.2.jar"
+        jumboMode="false" revision="21.0.2" sha1="99373741f99a0556ee293c41e8faa1ca3ae8a4e6" />
+    <item
+        dex="D:\Archivos Fam R.P\AndroidStudio\CiCarCamPi\socket\build\intermediates\pre-dexed\debug\classes-51a4815238217c48f1594a36f2d36e4c7ddcb95a.jar"
+        jar="D:\Archivos Fam R.P\AndroidStudio\CiCarCamPi\socket\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.2\classes.jar"
+        jumboMode="false" revision="21.0.2" sha1="7ae2d38807a43b2f2185ff4089a92c790b579e54" />
+
+</pre-dex-items>
