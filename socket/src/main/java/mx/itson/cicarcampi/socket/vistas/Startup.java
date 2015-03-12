@@ -8,7 +8,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import mx.itson.cicarcampi.socket.AccelerometerController;
 import mx.itson.cicarcampi.socket.ButtonsController;
@@ -83,14 +82,8 @@ public class Startup extends ActionBarActivity implements View.OnClickListener {
 
     private void showUserSettings() {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        try {
-            _SERVER_HOST = sharedPrefs.getString("pref_host", "192.168.10.1");
-            _SERVER_PORT = Integer.parseInt(sharedPrefs.getString("pref_port", "8080"));
-            Toast.makeText(this, String.format("%s:%d", _SERVER_HOST, _SERVER_PORT), Toast.LENGTH_LONG).show();
-        } catch (Exception ex) {
-            Toast.makeText(this, ex.getMessage(), Toast.LENGTH_LONG).show();
-            //Log.println(1,ex.getCause().toString(),ex.getMessage());
-        }
+        _SERVER_HOST = sharedPrefs.getString("pref_host", "192.168.10.1");
+        _SERVER_PORT = Integer.parseInt(sharedPrefs.getString("pref_port", "8080"));
     }
 }
 

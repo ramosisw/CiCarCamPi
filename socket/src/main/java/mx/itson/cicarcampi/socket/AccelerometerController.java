@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class AccelerometerController extends ActionBarActivity implements Sensor
     boolean _yAx;
     PowerManager pm;
     PowerManager.WakeLock wl;
-    boolean _LIGHT = false;
+    boolean _LIGHT = false, _CONNECTED = false;
     ImageButton btn_light;
     private int PORT = 0;
     private String HOST = null;
@@ -52,7 +53,7 @@ public class AccelerometerController extends ActionBarActivity implements Sensor
         z = (TextView) findViewById(R.id.zID);
 
         final int[] CLICKABLES = new int[]{
-                R.id.btn_brake, R.id.btn_accelerator, R.id.btn_light
+                R.id.btn_brake, R.id.btn_accelerator, R.id.btn_light, R.id.btn_connected
         };
         for (int i : CLICKABLES) {
             findViewById(i).setOnTouchListener(this);
@@ -104,17 +105,17 @@ public class AccelerometerController extends ActionBarActivity implements Sensor
             this.z.setText("Z = " + z);
             if (y < -2) {
                 if (!_yAx) {
-                    thread.sendCommand("D1");
+                    sendCommand("D1");
                 }
                 _yAx = true;
             } else if (y > 2) {
                 if (!_yAx) {
-                    thread.sendCommand("D0");
+                    sendCommand("D0");
                 }
                 _yAx = true;
             } else {
                 if (_yAx) {
-                    thread.sendCommand("D2");
+                    sendCommand("D2");
                 }
                 _yAx = false;
             }
@@ -139,33 +140,44 @@ public class AccelerometerController extends ActionBarActivity implements Sensor
         switch (view.getId()) {
             case R.id.btn_accelerator:
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                    thread.sendCommand("F1");
+                    sendCommand("F1");
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                    thread.sendCommand("F2");
+                    sendCommand("F2");
                 }
                 return false;
             case R.id.btn_brake:
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                    thread.sendCommand("F0");
+                    sendCommand("F0");
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                    thread.sendCommand("F2");
+                    sendCommand("F2");
                 }
                 return false;
             case R.id.btn_light:
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     if (_LIGHT) {
-                        thread.sendCommand("L0");
+                        sendCommand("L0");
                         btn_light.setImageResource(R.drawable.light_off);
                     } else {
-                        thread.sendCommand("L1");
+                        sendCommand("L1");
                         btn_light.setImageResource(R.drawable.light_on);
 
                     }
                     _LIGHT = !_LIGHT;
                 }
                 return false;
+            case R.id.btn_connected:
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    _CONNECTED = !((ToggleButton) view).isChecked();
+                }
+                return false;
         }
         return false;
+    }
+
+    private void sendCommand(String command) {
+        if (_CONNECTED) {
+            thread.sendCommand(command);
+        }
     }
 
     @Override
